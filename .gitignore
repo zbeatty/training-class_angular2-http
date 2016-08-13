@@ -1,0 +1,38 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+angular-http-start/dist
+angular-http-start/tmp
+angular-http-final/dist
+angular-http-final/tmp
+
+# dependencies
+angular-http-start/node_modules
+angular-http-start/bower_components
+angular-http-final/node_modules
+angular-http-final/bower_components
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+angular-http-start/typings
+angular-http-final/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
