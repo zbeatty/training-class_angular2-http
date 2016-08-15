@@ -20,11 +20,4 @@ export class PokemonService {
     return this.http.get(url)
       .map(res => res.json());
   }
-
-  private handleError(error: any) {
-    console.log('error', error);
-    let errMsg = (error.message) ? error.message : error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-    console.error(errMsg); // log to console instead
-    return Observable.throw(errMsg);
-  }
 }
