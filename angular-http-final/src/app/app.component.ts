@@ -25,13 +25,12 @@ export class AppComponent {
         this.pokemon = data["results"];
         let i = 1;
         this.pokemon.forEach((poke) => poke.sprite = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + i++ + '.png');
-        this.retrievingList = false;
       },
       (err) => {
         this.error = JSON.stringify(err);
       },
       () => {
-
+        this.retrievingList = false;
       }
       );
   }
@@ -39,16 +38,17 @@ export class AppComponent {
   setSelected(pokemon: any) {
     this.retrievingUrl = true;
     this.selectedPokemon = null;
-    console.log('pokemon', pokemon);
     this.pokemonService.getByUrl(pokemon.url)
       .subscribe(
-      (pokemon) => { 
-        this.selectedPokemon = pokemon; 
-        console.log('selectedPokemon2', this.selectedPokemon);
+      (pokemon) => {
+        this.selectedPokemon = pokemon;
+      },
+      (err) => {
+        this.error = JSON.stringify(err);
+      },
+      () => {
         this.retrievingUrl = false;
       }
-      
       );
-    console.log('selectedPokemon', this.selectedPokemon);
   }
 }
