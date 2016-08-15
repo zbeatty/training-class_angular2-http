@@ -6,34 +6,7 @@
   </md-toolbar>
 
   <div class="app-content">
-    <md-card>
-      <button md-raised-button color="primary" (click)="getList();">CATCH 'EM ALL</button>
-      <md-progress-bar class="app-progress" mode="indeterminate" aria-label="progress-bar" *ngIf="retrievingList"></md-progress-bar>
-    </md-card>
-    <div style="display: flex; flex-flow: row; justify-content: center;">
-      <md-list style="width: 100%">
-        <md-list-item *ngFor="let poke of pokemon; let i = index;">
-          <img md-list-avatar src="{{ poke.sprite }}" alt="monster" (click)="setSelected(poke);">
-          <h3 md-line>{{i + 1}}: {{ poke.name }}</h3>
-        </md-list-item>
-      </md-list>
-
-      <md-card style="width: 100%" *ngIf="retrievingUrl || selectedPokemon">
-        <md-spinner class="app-spinner" *ngIf="retrievingUrl"></md-spinner>
-        <div *ngIf="selectedPokemon">
-          <md-card-title>{{selectedPokemon.name}}</md-card-title>
-          <img md-card-image src={{selectedPokemon.sprites.front_default}}>
-          <md-card-content>
-            <p>Weight: {{selectedPokemon.weight}}</p>
-            <p>Height: {{selectedPokemon.height}}</p>
-            <p>Moves</p>
-            <ul>
-              <li *ngFor="let move of selectedPokemon.moves">{{move.move.name}}</li>
-            </ul>
-          </md-card-content>
-        </div>
-      </md-card>
-    </div>
+    
   </div>
 
 </md-sidenav-layout>

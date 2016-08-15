@@ -24,7 +24,7 @@ export class AppComponent {
       (data) => {
         this.pokemon = data["results"];
         let i = 1;
-        this.pokemon.forEach((poke) => poke.sprite = 'http://pokeapi.co/media/sprites/pokemon/' + i++ + '.png');
+        this.pokemon.forEach((poke) => poke.sprite = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + i++ + '.png');
         this.retrievingList = false;
       },
       (err) => {
@@ -38,6 +38,7 @@ export class AppComponent {
 
   setSelected(pokemon: any) {
     this.retrievingUrl = true;
+    this.selectedPokemon = null;
     console.log('pokemon', pokemon);
     this.pokemonService.getByUrl(pokemon.url)
       .subscribe(
