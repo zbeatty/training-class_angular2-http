@@ -57,7 +57,9 @@ import { AppComponent, environment } from './app/';
     PortalModule,
     RtlModule,
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   entryComponents: [AppComponent],
 })
 export class MaterialAppModule {

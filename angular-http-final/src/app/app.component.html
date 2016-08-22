@@ -11,7 +11,8 @@
       <md-progress-bar class="app-progress" mode="indeterminate" aria-label="progress-bar" *ngIf="retrievingList"></md-progress-bar>
     </md-card>
     <div style="display: flex; flex-flow: row; justify-content: center;">
-      <md-list style="width: 100%">
+
+      <md-list style="width: 100%" *ngIf="pokemon">
         <md-list-item *ngFor="let poke of pokemon; let i = index;">
           <img md-list-avatar src="{{ poke.sprite }}" alt="monster" (click)="setSelected(poke);">
           <h3 md-line>{{i + 1}}: {{ poke.name }}</h3>

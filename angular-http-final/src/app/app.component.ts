@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { PokemonService } from './pokemon.service';
+import { Pokelist } from './model/pokelist';
+import { Pokemon } from './model/pokemon';
 
 @Component({
   moduleId: module.id,
@@ -10,10 +12,10 @@ import { PokemonService } from './pokemon.service';
 })
 export class AppComponent {
   error: string;
-  pokemon: Array<any>;
+  pokemon: Array<Pokelist>;
   retrievingUrl = false;
   retrievingList = false;
-  selectedPokemon: any;
+  selectedPokemon: Pokemon;
 
   constructor(private pokemonService: PokemonService) { }
 
